@@ -1,7 +1,7 @@
 # Welcome!
 
 You are running eXist-db in a multi-instance setup on host
-{{ network_hostname }}.  This setup was created using
+{{ exist_instdns }}.  This setup was created using
 the eXist-db Ansible role.
 
 * instance name:     {{ exist_instname }}
@@ -44,7 +44,7 @@ Access the instance with a Browser:
 * `https://{{ exist_instdns }}/exist`
 
 Access the instance with SSH:
-* `ssh {{ exist_instuser }}@{{ network_hostname }}`
+* `ssh {{ exist_instuser }}@{{ exist_instdns }}`
 
 When logging in with SSH, you will be placed in `/home/{{ exist_instuser }}`.
 There is a symbolic link `{{ exist_instname }}` that points to the installation
