@@ -1,0 +1,20 @@
+---
+- name: Converge
+  hosts: all
+  environment:
+    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
+  pre_tasks:
+    - name: Install build dependencies
+      package:
+        name:
+          - git
+          - openjdk-8-jdk
+  roles:
+    - role: existdb
+      exist_repo_version: "eXist-4.7.1"
+      exist_instname: "extest"
+      exist_instuser: "extest"
+      exist_instdns: "extest.example.com"
+      exist_adminpass:
+        instance:
+          extest: "admin"
